@@ -1,0 +1,19 @@
+/* Wishlist Page Responsive Styles */
+
+/* Hide scrollbar for category scroll */
+.category-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.category-scroll-container {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* Mobile: Show partial button to hint scrollability */
+@media (max-width: 768px) {
+    .category-scroll-container {
+        padding-right: 3rem !important;
+        margin-right: -3rem !important;
+    }
+}

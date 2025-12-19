@@ -1,0 +1,100 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    margin-left: 0.25rem;
+}
+
+.inputContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: white;
+    border: 1px solid #e1e1e1;
+    border-radius: var(--radius-md);
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    transition: all 0.2s ease;
+    outline: none;
+    font-family: inherit;
+    appearance: none;
+    /* Remove default arrow for select */
+}
+
+/* Add custom arrow for select if not using icon */
+select.input:not(.hasIcon) {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+    padding-right: 2.5rem;
+}
+
+.hasIcon {
+    padding-left: 2.75rem !important;
+}
+
+.input:focus {
+    border-color: hsl(var(--color-primary));
+    box-shadow: 0 0 0 3px hsl(var(--color-primary) / 0.1);
+}
+
+.input::placeholder {
+    color: #999;
+}
+
+.inputContainer:focus-within .icon {
+    color: hsl(var(--color-primary));
+}
+
+.icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+    z-index: 1;
+    /* Ensure icon is above input background */
+}
+
+/* Adjust top position for textarea icon */
+textarea.input~.icon {
+    top: 1.5rem;
+}
+
+.input:focus+.borderGlow {
+    opacity: 1;
+}
+
+.errorMessage {
+    font-size: 0.75rem;
+    color: #ff4d4d;
+    margin-left: 0.25rem;
+}
+
+.inputError {
+    border-color: #dc2626 !important;
+    border-width: 2px !important;
+}
+
+.inputError:focus {
+    border-color: #dc2626 !important;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1) !important;
+}
