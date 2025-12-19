@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
 import { Button } from '../components/ui/Button';
-import { ArrowRight, Gift } from 'lucide-react';
 
 import { useWishlistUI } from '../context/WishlistUIContext';
 import { useI18n } from '../i18n/I18nContext';

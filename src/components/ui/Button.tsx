@@ -47,7 +47,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                         gap: '0.5rem'
                     }}>
                         {leftIcon && <span className={styles.icon}>{leftIcon}</span>}
-                        <span className={styles.content}>{children}</span>
+                        <span className={styles.content}>{children as React.ReactNode}</span>
                         {rightIcon && <span className={styles.icon}>{rightIcon}</span>}
                     </span>
                 )}
