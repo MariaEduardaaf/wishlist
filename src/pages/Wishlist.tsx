@@ -66,10 +66,13 @@ const Wishlist = () => {
         <Layout>
             <div className="container">
                 {/* Header Section */}
-                <div style={{
-                    paddingTop: '3rem',
-                    paddingBottom: '2rem'
-                }}>
+                <div
+                    className="wishlist-header"
+                    style={{
+                        paddingTop: '3rem',
+                        paddingBottom: '2rem'
+                    }}
+                >
                     {/* Category Filter - Minimalist Design */}
                     <div style={{
                         display: 'flex',

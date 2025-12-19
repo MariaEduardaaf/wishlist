@@ -131,4 +131,17 @@
     .actions {
         gap: 0.35rem;
     }
+
+    /* Hide "Novo Desejo" button on very small screens to prevent overflow */
+    .actions>button:last-child {
+        display: none;
+    }
+}
+
+/* Show button on slightly larger screens */
+@media (min-width: 481px) and (max-width: 768px) {
+    .actions>button:last-child {
+        font-size: 0.813rem;
+        padding: 0.5rem 0.875rem;
+    }
 }

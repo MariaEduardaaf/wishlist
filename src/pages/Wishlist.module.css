@@ -16,4 +16,20 @@
         padding-right: 3rem !important;
         margin-right: -3rem !important;
     }
+
+    /* Reduce top spacing on mobile */
+    .wishlist-header {
+        padding-top: 1.5rem !important;
+    }
+
+    /* Reduce top spacing on mobile */
+    .wishlist-container {
+        padding-top: 1.5rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .wishlist-container {
+        padding-top: 1rem !important;
+    }
 }
