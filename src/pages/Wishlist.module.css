@@ -29,6 +29,10 @@
 }
 
 @media (max-width: 480px) {
+    .wishlist-header {
+        padding-top: 1rem !important;
+    }
+
     .wishlist-container {
         padding-top: 1rem !important;
     }

@@ -1,3 +1,4 @@
+```
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Layout } from '../components/layout/Layout';
@@ -10,7 +11,7 @@ import type { Category, WishlistItem } from '../hooks/useWishlist';
 import { toast } from 'sonner';
 import { EditWishModal } from '../components/wishlist/EditWishModal';
 import { useI18n } from '../i18n/I18nContext';
-import './Wishlist.module.css';
+import styles from './Wishlist.module.css';
 
 const Wishlist = () => {
     const { items, isLoading, toggleWishStatus, deleteWish } = useWishlist();
@@ -67,7 +68,7 @@ const Wishlist = () => {
             <div className="container">
                 {/* Header Section */}
                 <div
-                    className="wishlist-header"
+                    className={styles['wishlist-header']}
                     style={{
                         paddingTop: '3rem',
                         paddingBottom: '2rem'
@@ -122,7 +123,7 @@ const Wishlist = () => {
                                     transition: 'all 0.2s ease',
                                     whiteSpace: 'nowrap',
                                     flexShrink: 0,
-                                    boxShadow: selectedCategory === cat.id ? `0 2px 8px ${cat.color}33` : 'none'
+                                    boxShadow: selectedCategory === cat.id ? `0 2px 8px ${ cat.color } 33` : 'none'
                                 }}
                             >
                                 {t(cat.label as any)}
@@ -166,13 +167,13 @@ const Wishlist = () => {
                                             alignItems: 'center',
                                             gap: '0.5rem',
                                             alignSelf: 'flex-start',
-                                            background: `${getCategoryColor(item.category)}10`,
+                                            background: `${ getCategoryColor(item.category) } 10`,
                                             padding: '0.4rem 0.9rem',
                                             borderRadius: 'var(--radius-full)',
                                             fontSize: '0.75rem',
                                             fontWeight: 600,
                                             color: getCategoryColor(item.category),
-                                            border: `1.5px solid ${getCategoryColor(item.category)}30`,
+                                            border: `1.5px solid ${ getCategoryColor(item.category) } 30`,
                                             marginBottom: '1.25rem',
                                             textTransform: 'uppercase',
                                             letterSpacing: '0.5px'
