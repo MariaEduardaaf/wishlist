@@ -11,8 +11,11 @@ interface I18nContextType {
 
 const I18nContext = createContext<I18nContextType | undefined>(undefined);
 
-export const I18nProvider = ({ children }: { children: ReactNode }) => {
-    const [language, setLanguage] = useState<Language>('pt');
+export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+    const [language, setLanguage] = useState<Language>(() => {
+        const saved = localStorage.getItem('language');
+        return (saved as Language) || 'en'; // Default to English
+    });
 
     const t = (key: TranslationKey): string => {
         return translations[language][key] || translations.pt[key] || key;
