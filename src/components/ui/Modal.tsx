@@ -29,14 +29,19 @@ export const Modal = ({ isOpen, onClose, title, children, footer }: ModalProps) 
                     <div className={styles.wrapper}>
                         <motion.div
                             className={styles.modal}
-                            initial={{ y: 50, opacity: 0, scale: 0.95 }}
-                            animate={{ y: 0, opacity: 1, scale: 1 }}
-                            exit={{ y: 50, opacity: 0, scale: 0.95 }}
-                            transition={{ type: "spring", duration: 0.5 }}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.95 }}
+                            transition={{ duration: 0.2 }}
+                            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
                         >
                             <div className={styles.header}>
                                 <h2 className={styles.title}>{title}</h2>
-                                <button onClick={onClose} className={styles.closeButton}>
+                                <button
+                                    className={styles.closeButton}
+                                    onClick={onClose}
+                                    aria-label="Close"
+                                >
                                     <X size={20} />
                                 </button>
                             </div>
